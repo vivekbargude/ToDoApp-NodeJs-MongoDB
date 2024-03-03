@@ -175,7 +175,10 @@ class _DashBoardState extends State<DashBoard> {
                ),
                child: Padding(
                  padding: const EdgeInsets.all(8.0),
-                 child: items == null ? null : ListView.builder(
+                 child: items == null
+                  ? const Center(child: CircularProgressIndicator()) 
+                  : items!.isEmpty
+                      ? const Center(child: Text('No tasks available')) : ListView.builder(
                      itemCount: items!.length,
                      itemBuilder: (context,int index){
                        return Slidable(

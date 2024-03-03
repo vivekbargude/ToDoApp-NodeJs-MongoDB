@@ -120,9 +120,11 @@ class _RegistrationState extends State<Registration> {
                   HStack([
                     GestureDetector(
                       onTap: () => {registerUser()},
-                      child: VxBox(child: "Register".text.white.makeCentered().p16())
+                      child: VxBox(child: "Register".text.bold.white.makeCentered().p1())
                           .green600
                           .roundedLg
+                          .width(context.percentWidth * 80) 
+                            .height(50)
                           .make()
                           .px16()
                           .py16(),

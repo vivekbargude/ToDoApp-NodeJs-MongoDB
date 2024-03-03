@@ -91,7 +91,7 @@ class _SignInPageState extends State<SignInPage> {
                     controller: emailController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.email),
+                        prefixIcon: const Icon(Icons.email,color: Colors.black,),
                         filled: true,
                         fillColor: Colors.white,
                         hintText: "Email",
@@ -106,7 +106,7 @@ class _SignInPageState extends State<SignInPage> {
                     keyboardType: TextInputType.text,
                     obscureText: !_isPasswordVisible,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.lock),
+                      prefixIcon: const Icon(Icons.lock,color: Colors.black,),
                       filled: true,
                       fillColor: Colors.white,
                       hintText: "Password",
@@ -131,15 +131,17 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ).p4().px24(),
                   Padding(
-                    padding: const EdgeInsets.only(top:10),
+                    padding: const EdgeInsets.only(top:20),
                     child: GestureDetector(
                       onTap: () {
                         loginUser();
                       },
                       child: HStack([
-                        VxBox(child: "LogIn".text.white.makeCentered().p16())
+                        VxBox(child: "LogIn".text.bold.white.makeCentered().p1())
                             .green600
                             .roundedLg
+                            .width(context.percentWidth * 80) 
+                            .height(50)
                             .make(),
                       ]),
                     ),
@@ -157,10 +159,11 @@ class _SignInPageState extends State<SignInPage> {
                 builder: (context) => const Registration()));
              },
           child: Container(
-              height: 25,
-              color: Colors.lightBlue,
+              height: 60,
+              color:Color.fromARGB(255, 64, 196, 255),
               child: Center(
-                  child: "Create a new Account..! Sign Up".text.white.makeCentered())),
+                  child: "Create a new Account..! Sign Up".text.black.makeCentered(),)
+                  ),
         ),
       ),
     );
